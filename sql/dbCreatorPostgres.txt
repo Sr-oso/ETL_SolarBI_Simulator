@@ -1,0 +1,24 @@
+CREATE DATABASE solarbi_db;
+\c solarbi_db;
+
+CREATE SCHEMA IF NOT EXISTS silver;
+CREATE SCHEMA IF NOT EXISTS dwh;
+
+CREATE TABLE IF NOT EXISTS silver.lectura_5min (
+    ts TIMESTAMP NOT NULL,
+    dispositivo_id INT NOT NULL,
+    p_ac_kw NUMERIC(8,3),
+    irradiancia_wm2 NUMERIC(8,1),
+    temp_modulo_c NUMERIC(5,1),
+    PRIMARY KEY (ts, dispositivo_id)
+);
+
+CREATE TABLE IF NOT EXISTS dwh.fact_energia_dia (
+    fecha DATE NOT NULL,
+    dispositivo_id INT NOT NULL,
+    energia_kwh NUMERIC(10,3),
+    pct_datos_validos NUMERIC(5,2),
+    PRIMARY KEY (fecha, dispositivo_id)
+);
+
+\q
