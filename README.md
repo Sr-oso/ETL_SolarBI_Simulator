@@ -72,4 +72,4 @@ Integrante: Emmanuel Villa Peláez (@Sr-oso)
 Tareas Realizadas: Arquitectura e implementación completa del proyecto: diseño de esquemas PostgreSQL (silver y dwh), desarrollo del pipeline ETL en Python (run_etl.py), pruebas de idempotencia, tablero completo en Grafana (Series de Tiempo, Gauge SLA y variables) y modelo en Power BI.
 
 Integrante: Susana Romero García (@Susagarcia0)
-Tareas Realizadas: Redacción de la documentación técnica, preparación del informe ejecutivo en PDF y estructuración del repositorio de entrega.
+Tareas Realizadas: Redacción de la documentación técnica, preparación del informe ejecutivo en PDF y estructuración del repositorio de entrega. 
