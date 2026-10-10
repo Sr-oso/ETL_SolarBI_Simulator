@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-# Credenciales de conexión a PostgreSQL
+# Credenciales de conexión a PostgreSQL 
 DB_USER = os.getenv("DB_USER", "postgres")
 DB_PASS = os.getenv("DB_PASS", "postgres")
 DB_HOST = os.getenv("DB_HOST", "localhost")
