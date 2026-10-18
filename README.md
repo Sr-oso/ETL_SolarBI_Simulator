@@ -1,25 +1,20 @@
-# SolarBI - Monitoreo y Gestión Energética de Plantas Solares
-
-**Asignatura:** Inteligencia de Negocios · Grupo 50 · 2026-II  
-**Docente:** Ramiro Grisales Montoya  
-**Institución:** Institución Universitaria Pascual Bravo  
+# SolarBI Simulator - Monitoreo y Gestión Energética de Plantas Solares   
 
 ---
 
-## 👥 Integrantes del Equipo
+## Integrantes del Equipo
 
-* **Integrante 1:** Emmanuel Villa Peláez — `@Sr-oso`
-* **Integrante 2:** Susana Romero García — `@Susagarcia0`
-
----
-
-## 📝 Descripción del Proyecto
-
-SolarBI es una solución integral de Inteligencia de Negocios para el monitoreo en tiempo real y el análisis ejecutivo de plantas fotovoltaicas. La plataforma realiza la ingesta automatizada de telemetría (potencia AC e irradiancia), limpia los datos en una capa *Silver* en PostgreSQL, consolida indicadores agregados en una capa *Gold* (`dwh`) e integra la visualización mediante **Grafana** (monitoreo operativo) y **Power BI** (análisis gerencial de SLA y ahorro en COP).
+By: Emmanuel Villa Peláez — `@Sr-oso`
 
 ---
 
-## 🛠️ Pasos para Reproducir la Práctica
+## Descripción del Proyecto
+
+SolarBI es una solución integral para el monitoreo en tiempo real y el análisis ejecutivo de plantas fotovoltaicas. La plataforma realiza la ingesta automatizada de telemetría (potencia AC e irradiancia), limpia los datos en una capa *Silver* en PostgreSQL, consolida indicadores agregados en una capa *Gold* (`dwh`) e integra la visualización mediante **Grafana** (monitoreo operativo) y **Power BI** (análisis gerencial de SLA y ahorro en COP).
+
+---
+
+## Pasos para la ejecución
 
 ### 1. Requisitos Previos
 * **PostgreSQL 14+** instalado y ejecutándose en el puerto local predeterminado (`5432`).
@@ -56,9 +51,9 @@ python etl/run_etl.py
 
 Nota de Idempotencia: El script puede ejecutarse múltiples veces consecutivas sobre la misma base de datos sin duplicar registros ni lanzar errores de clave duplicada (mantiene de forma estable los 841 registros en Silver).
 
-CARGA DE DATOS GRAFANA:
+Carga de datos en grafana:
 1. Inicia sesión en tu servidor local de Grafana (http://localhost:3000).
-2.Ve al menú lateral - Dashboards - New - Import.
+2. Ve al menú lateral - Dashboards - New - Import.
 3. Carga el archivo grafana/dashboard.json guardado en este repositorio.
 4. Selecciona tu fuente de datos PostgreSQL de la lista y presiona Import.
 5. Asegúrate de ajustar el rango temporal superior entre 05/10/2026 y 07/10/2026 para visualizar el panel de Series de Tiempo y el Gauge de SLA (94.6%).
@@ -68,8 +63,4 @@ CARGA DE DATOS POWERBI:
 2. Si te solicita actualización de credenciales, ingresa las de tu instancia local de PostgreSQL para conectar a la base solarbi_db.
 3. Haz clic en Transformar datos - Configuración de origen de datos si requieres cambiar el servidor o puerto.
 
-Integrante: Emmanuel Villa Peláez (@Sr-oso)
-Tareas Realizadas: Arquitectura e implementación completa del proyecto: diseño de esquemas PostgreSQL (silver y dwh), desarrollo del pipeline ETL en Python (run_etl.py), pruebas de idempotencia, tablero completo en Grafana (Series de Tiempo, Gauge SLA y variables) y modelo en Power BI.
-
-Integrante: Susana Romero García (@Susagarcia0)
-Tareas Realizadas: Redacción de la documentación técnica, preparación del informe ejecutivo en PDF y estructuración del repositorio de entrega. 
+Arquitectura e implementación completa del proyecto: diseño de esquemas PostgreSQL (silver y dwh), desarrollo del pipeline ETL en Python (run_etl.py), pruebas de idempotencia, tablero completo en Grafana (Series de Tiempo, Gauge SLA y variables) y modelo en Power BI.
